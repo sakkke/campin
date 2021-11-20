@@ -16,5 +16,8 @@
     "url": "https://github.com/sakkke/campin/issues"
   },
   "homepage": "https://github.com/sakkke/campin#readme",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  }
 }
