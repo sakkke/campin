@@ -9,10 +9,17 @@
   export let width = 'auto'
   export let zoom = 18
 
+  let map
+
+  $: {
+    lat, lon
+    if (map) map.setView(new L.LatLng(lat, lon))
+  }
+
   const id = `map-${Math.random().toString(36)}`
 
   onMount(() => {
-    const map = L.map(id, {
+    map = L.map(id, {
       center: [lat, lon],
       zoom,
     })
