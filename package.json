@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/sakkke/campin/issues"
   },
-  "homepage": "https://github.com/sakkke/campin#readme"
+  "homepage": "https://github.com/sakkke/campin#readme",
+  "private": true
 }
