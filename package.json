@@ -2,8 +2,10 @@
   "name": "campin",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "src/index.html",
   "scripts": {
+    "build": "parcel build --public-url ./",
+    "serve": "parcel serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
