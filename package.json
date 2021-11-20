@@ -19,5 +19,8 @@
   "private": true,
   "devDependencies": {
     "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "svelte": "^3.44.2"
   }
 }
