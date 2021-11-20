@@ -1,0 +1,64 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+
+  version-major:
+    runs-on: ubuntu-latest
+    if: "startsWith(github.event.head_commit.message, '[major]')"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PAT }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: npm
+      - run: git config --global user.name github-actions
+      - run: git config --global user.email github-actions@github.com
+      - run: "npm version major -m '[release] %s'"
+      - run: git push --follow-tags
+
+  version-minor:
+    runs-on: ubuntu-latest
+    if: "startsWith(github.event.head_commit.message, '[minor]')"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PAT }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: npm
+      - run: git config --global user.name github-actions
+      - run: git config --global user.email github-actions@github.com
+      - run: "npm version minor -m '[release] %s'"
+      - run: git push --follow-tags
+
+  version-patch:
+    runs-on: ubuntu-latest
+    if: "startsWith(github.event.head_commit.message, '[patch]')"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PAT }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: npm
+      - run: git config --global user.name github-actions
+      - run: git config --global user.email github-actions@github.com
+      - run: "npm version patch -m '[release] %s'"
+      - run: git push --follow-tags
