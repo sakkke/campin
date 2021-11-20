@@ -1,19 +1,35 @@
 <script>
   import Heading from './lib/Heading.svelte'
   import MapCard from './lib/MapCard.svelte'
+  import XCenter from './lib/XCenter.svelte'
+  import YCenter from './lib/YCenter.svelte'
   import LayoutGrid, { Cell } from '@smui/layout-grid'
   import 'svelte-material-ui/bare.css'
 </script>
 
 <main>
-  <Heading></Heading>
-  <LayoutGrid>
-    {#each Array(1) as _}
-      <Cell span={6}>
-        <MapCard></MapCard>
-      </Cell>
-    {/each}
-  </LayoutGrid>
+  <XCenter>
+    <Heading></Heading>
+  </XCenter>
+  <YCenter style="height: 100%;">
+    <LayoutGrid style="width: 100%;">
+      {#each Array(1) as _}
+        <Cell span={6}>
+          <MapCard></MapCard>
+        </Cell>
+      {/each}
+    </LayoutGrid>
+  </YCenter>
 </main>
 
-<style></style>
+<style>
+  :global(body, h1) {
+    margin: 0;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+</style>
