@@ -7,6 +7,7 @@
   import LinearProgress from '@smui/linear-progress'
   import IconButton from '@smui/icon-button'
   import TextField from '@smui/textfield'
+  import Icon from '@smui/textfield/icon'
   import Tooltip, { Wrapper } from '@smui/tooltip'
   import { decode } from 'pluscodes'
 
@@ -71,7 +72,9 @@
           {invalid}
           label="plus code"
           style="width: 100%;"
-        ></TextField>
+        >
+          <Icon class="material-icons" slot="leadingIcon">place</Icon>
+        </TextField>
         <Wrapper>
           <IconButton
             class="material-icons"
