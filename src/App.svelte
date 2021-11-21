@@ -4,6 +4,7 @@
   import MapCard from './lib/MapCard.svelte'
   import XCenter from './lib/XCenter.svelte'
   import YCenter from './lib/YCenter.svelte'
+  import { pluscodes } from './stores'
   import LayoutGrid, { Cell } from '@smui/layout-grid'
   import 'svelte-material-ui/bare.css'
 </script>
@@ -14,9 +15,9 @@
   </XCenter>
   <YCenter style="height: 100%;">
     <LayoutGrid style="background-color: rgba(255, 255, 255, 20%); border-radius: 20px; margin: 20px; width: 100%;">
-      {#each Array(1) as _}
+      {#each $pluscodes as pluscode}
         <Cell span={6}>
-          <MapCard></MapCard>
+          <MapCard {pluscode}></MapCard>
         </Cell>
       {/each}
     </LayoutGrid>

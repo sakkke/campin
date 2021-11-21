@@ -11,6 +11,8 @@
   $: invalid = decoded === null
   $: lat = invalid ? lat : decoded.latitude
   $: lon = invalid ? lon : decoded.longitude
+
+  export { value as pluscode }
 </script>
 
 <Card style="overflow: hidden;">
