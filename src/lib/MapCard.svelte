@@ -1,5 +1,5 @@
 <script>
-  import { activeCamp, campingTime, finishTime } from '../stores'
+  import { activeCamp, campingTime, finishTime, pluscodes } from '../stores'
   import Map from './Map.svelte'
   import '@fontsource/bevan'
   import '@fontsource/material-icons'
@@ -27,6 +27,7 @@
       if (!(progress > 1)) {
         progress = 1 - ($finishTime - Date.now()) / $campingTime
       } else {
+        if (!$pluscodes.includes(value)) $pluscodes.push(value)
         stopCamp()
       }
     }
