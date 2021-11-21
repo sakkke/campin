@@ -1,0 +1,19 @@
+body {
+  background-attachment: fixed;
+  background-image: url(./img/scott-goodwill-y8Ngwq34_Ak-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  background: inherit;
+  content: '';
+  filter:
+    blur(2px)
+    brightness(80%);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}

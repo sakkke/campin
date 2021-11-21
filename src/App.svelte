@@ -1,4 +1,5 @@
 <script>
+  import './global.css'
   import Heading from './lib/Heading.svelte'
   import MapCard from './lib/MapCard.svelte'
   import XCenter from './lib/XCenter.svelte'
@@ -12,7 +13,7 @@
     <Heading></Heading>
   </XCenter>
   <YCenter style="height: 100%;">
-    <LayoutGrid style="width: 100%;">
+    <LayoutGrid style="background-color: rgba(255, 255, 255, 20%); border-radius: 20px; margin: 20px; width: 100%;">
       {#each Array(1) as _}
         <Cell span={6}>
           <MapCard></MapCard>

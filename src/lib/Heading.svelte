@@ -11,6 +11,7 @@
     text-shadow:
       -1px -1px #000,
       -1px 1px #000,
+      0 0 2px #000,
       1px -1px #000,
       1px 1px #000;
   }
