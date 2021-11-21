@@ -7,6 +7,7 @@
   import LinearProgress from '@smui/linear-progress'
   import IconButton from '@smui/icon-button'
   import TextField from '@smui/textfield'
+  import Tooltip, { Wrapper } from '@smui/tooltip'
   import { decode } from 'pluscodes'
 
   let progress = 0
@@ -47,11 +48,14 @@
     <Content style="height: 56px /* computed */;">
       <div style="display: flex;">
         <LinearProgress {progress} style="margin: auto;"></LinearProgress>
-        <IconButton
-          class="material-icons"
-          on:click={() => stopCamp()}
-          style="margin: auto;"
-        >cancel</IconButton>
+        <Wrapper>
+          <IconButton
+            class="material-icons"
+            on:click={() => stopCamp()}
+            style="margin: auto;"
+          >cancel</IconButton>
+          <Tooltip>Stop camp</Tooltip>
+        </Wrapper>
       </div>
     </Content>
   {:else}
@@ -68,15 +72,18 @@
           label="plus code"
           style="width: 100%;"
         ></TextField>
-        <IconButton
-          class="material-icons"
-          disabled={!!$finishTime && $activeCamp !== index}
-          on:click={() => {
-            $activeCamp = index
-            $finishTime = Date.now() + $campingTime
-          }}
-          style="margin: auto;"
-        >launch</IconButton>
+        <Wrapper>
+          <IconButton
+            class="material-icons"
+            disabled={!!$finishTime && $activeCamp !== index}
+            on:click={() => {
+              $activeCamp = index
+              $finishTime = Date.now() + $campingTime
+            }}
+            style="margin: auto;"
+          >launch</IconButton>
+          <Tooltip>Start camp</Tooltip>
+        </Wrapper>
       </div>
     </Content>
   {/if}
