@@ -13,7 +13,7 @@
   $: lon = invalid ? lon : decoded.longitude
 </script>
 
-<Card>
+<Card style="overflow: hidden;">
   <Media class="card-media-16x9" aspectRatio="16x9">
     <MediaContent>
       <Map height="100%" {lat} {lon}></Map>
