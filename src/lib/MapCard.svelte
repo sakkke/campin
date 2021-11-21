@@ -1,37 +1,79 @@
 <script>
+  import { activeCamp, campingTime, finishTime } from '../stores'
   import Map from './Map.svelte'
   import '@fontsource/material-icons'
   import Card, { Content, Media, MediaContent } from '@smui/card'
+  import LinearProgress from '@smui/linear-progress'
   import IconButton from '@smui/icon-button'
   import TextField from '@smui/textfield'
   import { decode } from 'pluscodes'
 
+  let progress = 0
   let value = '8Q7XMPQG+3C'
+  $: camping = !!$activeCamp || !!$finishTime
   $: decoded = decode(value)
   $: invalid = decoded === null
   $: lat = invalid ? lat : decoded.latitude
   $: lon = invalid ? lon : decoded.longitude
 
+  function stopCamp () {
+    $activeCamp = 0
+    $finishTime = 0
+  }
+
+  setInterval(() => {
+    if (!!$finishTime && $activeCamp === index) {
+      if (!(progress > 1)) {
+        progress = 1 - ($finishTime - Date.now()) / $campingTime
+      } else {
+        stopCamp()
+      }
+    }
+  }, 10 * 1000 /* seconds */)
+  
+  export let index = 0
   export { value as pluscode }
 </script>
 
 <Card style="overflow: hidden;">
-  <Media class="card-media-16x9" aspectRatio="16x9">
-    <MediaContent>
-      <Map height="100%" {lat} {lon} marked></Map>
-    </MediaContent>
-  </Media>
-  <Content>
-    <div style="display: flex;">
-      <TextField
-        bind:value
-        {invalid}
-        label="plus code"
-        style="width: 100%;"
-      ></TextField>
-      <IconButton class="material-icons" style="margin: auto;">launch</IconButton>
-    </div>
-  </Content>
+  {#if !!$finishTime && $activeCamp === index}
+    <Media class="camp-cover card-media-16x9" aspectRatio="16x9"></Media>
+    <Content style="height: 56px /* computed */;">
+      <div style="display: flex;">
+        <LinearProgress {progress} style="margin: auto;"></LinearProgress>
+        <IconButton
+          class="material-icons"
+          on:click={() => stopCamp()}
+          style="margin: auto;"
+        >cancel</IconButton>
+      </div>
+    </Content>
+  {:else}
+    <Media class="card-media-16x9" aspectRatio="16x9">
+      <MediaContent>
+        <Map height="100%" {lat} {lon} marked></Map>
+      </MediaContent>
+    </Media>
+    <Content style="height: 56px /* computed */;">
+      <div style="display: flex;">
+        <TextField
+          bind:value
+          {invalid}
+          label="plus code"
+          style="width: 100%;"
+        ></TextField>
+        <IconButton
+          class="material-icons"
+          disabled={!!$finishTime && $activeCamp !== index}
+          on:click={() => {
+            $activeCamp = index
+            $finishTime = Date.now() + $campingTime
+          }}
+          style="margin: auto;"
+        >launch</IconButton>
+      </div>
+    </Content>
+  {/if}
 </Card>
 
 <style></style>

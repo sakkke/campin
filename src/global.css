@@ -17,3 +17,9 @@ body::before {
   width: 100%;
   z-index: -1;
 }
+
+.camp-cover {
+  background-image: url(./img/jatin-jangid-1f0DB1u7p8Q-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+}
