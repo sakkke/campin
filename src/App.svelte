@@ -15,7 +15,7 @@
   </XCenter>
   <YCenter style="height: 100%;">
     <LayoutGrid style="background-color: rgba(255, 255, 255, 20%); border-radius: 20px; margin: 20px; width: 100%;">
-      {#each $pluscodes as pluscode, index}
+      {#each [...$pluscodes].reverse() as pluscode, index}
         <Cell span={6}>
           <MapCard {index} {pluscode}></MapCard>
         </Cell>
