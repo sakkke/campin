@@ -1,6 +1,7 @@
 <script>
   import { activeCamp, campingTime, finishTime } from '../stores'
   import Map from './Map.svelte'
+  import '@fontsource/bevan'
   import '@fontsource/material-icons'
   import Card, { Content, Media, MediaContent } from '@smui/card'
   import LinearProgress from '@smui/linear-progress'
@@ -37,7 +38,11 @@
 
 <Card style="overflow: hidden;">
   {#if !!$finishTime && $activeCamp === index}
-    <Media class="camp-cover card-media-16x9" aspectRatio="16x9"></Media>
+    <Media class="camp-cover card-media-16x9" aspectRatio="16x9">
+      <MediaContent>
+        <span class="pluscode-cover">{value}</span>
+      </MediaContent>
+    </Media>
     <Content style="height: 56px /* computed */;">
       <div style="display: flex;">
         <LinearProgress {progress} style="margin: auto;"></LinearProgress>
@@ -76,4 +81,14 @@
   {/if}
 </Card>
 
-<style></style>
+<style>
+  .pluscode-cover {
+    background-color: #fff;
+    border-radius: 20px;
+    bottom: 0;
+    font-family: Bevan;
+    margin: .5em;
+    padding: .5em;
+    position: absolute;
+  }
+</style>
