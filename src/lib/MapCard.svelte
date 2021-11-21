@@ -16,7 +16,7 @@
 <Card style="overflow: hidden;">
   <Media class="card-media-16x9" aspectRatio="16x9">
     <MediaContent>
-      <Map height="100%" {lat} {lon}></Map>
+      <Map height="100%" {lat} {lon} marked></Map>
     </MediaContent>
   </Media>
   <Content>
