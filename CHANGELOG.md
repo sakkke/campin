@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- New dependencies: `@smui/tooltip`, `@smui/top-app-bar`, `@smui/drawer`, `@smui/list`, `svelte-spa-router`
+- Add tooltip to buttons
+- Add icon to text field
+- Add variables for smui
+- Add top-app-bar and drawer
+- Implement routing feature
+
+### Changed
+- Change `h1` to `span` in `Heading.svelte`
+- Rename `Heading.svelte` to `Logo.svelte`
 
 ## [0.1.0] - 2021-11-21
 ### Added
