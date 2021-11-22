@@ -2,10 +2,10 @@
   import '@fontsource/bevan'
 </script>
 
-<h1>Camp<span>i</span>n</h1>
+<span>Camp<span>i</span>n</span>
 
 <style>
-  h1 {
+  span {
     color: #fff;
     font-family: Bevan;
     text-shadow:
@@ -16,7 +16,7 @@
       1px 1px #000;
   }
 
-  h1 span {
+  span span {
     color: #2bf;
   }
 </style>
