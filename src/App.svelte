@@ -1,6 +1,6 @@
 <script>
   import './global.css'
-  import Heading from './lib/Heading.svelte'
+  import Logo from './lib/Logo.svelte'
   import MapCard from './lib/MapCard.svelte'
   import YCenter from './lib/YCenter.svelte'
   import { pluscodes } from './stores'
@@ -17,7 +17,7 @@
 
 <Drawer bind:open fixed={false} style="z-index: 20000;" variant="modal">
   <Header>
-    <DrawerTitle><Heading></Heading></DrawerTitle>
+    <DrawerTitle><Logo></Logo></DrawerTitle>
   </Header>
   <Content>
     <List>
