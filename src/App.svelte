@@ -23,7 +23,7 @@
   </Header>
   <Content>
     <List>
-      <Item href="javascript:void(0)">
+      <Item href="#/">
         <Graphic class="material-icons" aria-hidden="true">home</Graphic>
         <Text>Home</Text>
       </Item>
