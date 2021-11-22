@@ -1,15 +1,17 @@
 <script>
   import './global.css'
   import Logo from './lib/Logo.svelte'
-  import MapCard from './lib/MapCard.svelte'
-  import YCenter from './lib/YCenter.svelte'
-  import { pluscodes } from './stores'
+  import Home from './routes/Home.svelte'
   import Drawer, { Content, Title as DrawerTitle, Header } from '@smui/drawer'
   import IconButton from '@smui/icon-button'
-  import LayoutGrid, { Cell } from '@smui/layout-grid'
   import List, { Graphic, Item, Text } from '@smui/list'
   import TopAppBar, { AutoAdjust, Row, Section, Title } from '@smui/top-app-bar'
   import 'svelte-material-ui/bare.css'
+  import Router from 'svelte-spa-router'
+
+  const routes = {
+    '/': Home,
+  }
 
   let open = false
   let topAppBar
@@ -39,15 +41,7 @@
 </TopAppBar>
 <div class="drawer-cover" class:hidden={!open} on:click={() => open = false}></div>
 <AutoAdjust style="display: flex; flex-direction: column; min-height: 100vh;" {topAppBar}>
-  <YCenter style="height: 100%;">
-    <LayoutGrid style="background-color: rgba(255, 255, 255, 20%); border-radius: 20px; margin: 20px; width: 100%;">
-      {#each [...$pluscodes].reverse() as pluscode, index}
-        <Cell span={6}>
-          <MapCard {index} {pluscode}></MapCard>
-        </Cell>
-      {/each}
-    </LayoutGrid>
-  </YCenter>
+  <Router {routes}></Router>
 </AutoAdjust>
 
 <style>
