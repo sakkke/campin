@@ -14,6 +14,10 @@
     '/': Home,
     '/help': Help,
   }
+  const titleMap = {
+    '/': 'Home',
+    '/help': 'Help',
+  }
 
   let open = false
   let topAppBar
@@ -56,7 +60,7 @@
   <Row>
     <Section>
       <IconButton class="material-icons" on:click={() => openDrawer()}>menu</IconButton>
-      <Title>Home</Title>
+      <Title>{titleMap[$location]}</Title>
     </Section>
     <Section align="end" toolbar></Section>
   </Row>
