@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add help page
 - Add `activated` directive in `<Item>`
+- New dependency: `@smui/data-table`
 
 ### Changed
 - Change behavior when item clicked
