@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add help page
 - Add `activated` directive in `<Item>`
 
+### Changed
+- Change behavior when item clicked
+
 ### Fixed
 - Make top-app-bar fixed
 - Fix `min-height` in `<main>`

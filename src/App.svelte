@@ -17,6 +17,10 @@
 
   let open = false
   let topAppBar
+
+  function closeDrawer () {
+    open = false
+  }
 </script>
 
 <Drawer bind:open style="z-index: 20000;" variant="modal">
@@ -28,6 +32,7 @@
       <Item
         activated={$location === '/'}
         href="#/"
+        on:click={() => closeDrawer()}
       >
         <Graphic class="material-icons" aria-hidden="true">home</Graphic>
         <Text>Home</Text>
@@ -35,6 +40,7 @@
       <Item
         activated={$location === '/help'}
         href="#/help"
+        on:click={() => closeDrawer()}
       >
         <Graphic class="material-icons" aria-hidden="true">help</Graphic>
         <Text>Help</Text>
