@@ -1,6 +1,7 @@
 <script>
   import './global.css'
   import Logo from './lib/Logo.svelte'
+  import Help from './routes/Help.svelte'
   import Home from './routes/Home.svelte'
   import Drawer, { Content, Title as DrawerTitle, Header } from '@smui/drawer'
   import IconButton from '@smui/icon-button'
@@ -11,6 +12,7 @@
 
   const routes = {
     '/': Home,
+    '/help': Help,
   }
 
   let open = false
@@ -26,6 +28,10 @@
       <Item href="#/">
         <Graphic class="material-icons" aria-hidden="true">home</Graphic>
         <Text>Home</Text>
+      </Item>
+      <Item href="#/help">
+        <Graphic class="material-icons" aria-hidden="true">help</Graphic>
+        <Text>Help</Text>
       </Item>
     </List>
   </Content>
