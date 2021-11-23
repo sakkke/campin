@@ -16,3 +16,4 @@ export const pluscodes = persistentStore('pluscodes', [
   '7QR96P89+RQ', // 首里城
   '87G8Q2JM+F9', // セントラルパーク
 ])
+export const stats = persistentStore('stats', [])

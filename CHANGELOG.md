@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add help page
 - Add `activated` directive in `<Item>`
 - New dependency: `@smui/data-table`
+- Implement stats feature
 
 ### Changed
 - Change behavior when item clicked

@@ -3,6 +3,7 @@
   import Logo from './lib/Logo.svelte'
   import Help from './routes/Help.svelte'
   import Home from './routes/Home.svelte'
+  import Stats from './routes/Stats.svelte'
   import Drawer, { Content, Title as DrawerTitle, Header } from '@smui/drawer'
   import IconButton from '@smui/icon-button'
   import List, { Graphic, Item, Separator, Text } from '@smui/list'
@@ -13,10 +14,12 @@
   const routes = {
     '/': Home,
     '/help': Help,
+    '/stats': Stats,
   }
   const titleMap = {
     '/': 'Home',
     '/help': 'Help',
+    '/stats': 'Stats',
   }
 
   let open = false
@@ -44,6 +47,14 @@
       >
         <Graphic class="material-icons" aria-hidden="true">home</Graphic>
         <Text>Home</Text>
+      </Item>
+      <Item
+        activated={$location === '/stats'}
+        href="#/stats"
+        on:click={() => closeDrawer()}
+      >
+        <Graphic class="material-icons" aria-hidden="true">query_stats</Graphic>
+        <Text>Stats</Text>
       </Item>
       <Separator></Separator>
       <Item
