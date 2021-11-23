@@ -21,6 +21,10 @@
   function closeDrawer () {
     open = false
   }
+
+  function openDrawer () {
+    open = true
+  }
 </script>
 
 <Drawer bind:open style="z-index: 20000;" variant="modal">
@@ -51,13 +55,13 @@
 <TopAppBar bind:this={topAppBar} style="height: 64px /* computed */; z-index: 10000;" variant="standard">
   <Row>
     <Section>
-      <IconButton class="material-icons" on:click={() => open = true}>menu</IconButton>
+      <IconButton class="material-icons" on:click={() => openDrawer()}>menu</IconButton>
       <Title>Home</Title>
     </Section>
     <Section align="end" toolbar></Section>
   </Row>
 </TopAppBar>
-<div class="drawer-cover" class:hidden={!open} on:click={() => open = false}></div>
+<div class="drawer-cover" class:hidden={!open} on:click={() => closeDrawer()}></div>
 <AutoAdjust style="display: flex; flex-direction: column; min-height: calc(100vh - 64px /* computed */);" {topAppBar}>
   <Router {routes}></Router>
 </AutoAdjust>
