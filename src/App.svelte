@@ -17,7 +17,7 @@
   let topAppBar
 </script>
 
-<Drawer bind:open fixed={false} style="z-index: 20000;" variant="modal">
+<Drawer bind:open style="z-index: 20000;" variant="modal">
   <Header>
     <DrawerTitle><Logo></Logo></DrawerTitle>
   </Header>
