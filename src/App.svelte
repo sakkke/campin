@@ -8,7 +8,7 @@
   import List, { Graphic, Item, Text } from '@smui/list'
   import TopAppBar, { AutoAdjust, Row, Section, Title } from '@smui/top-app-bar'
   import 'svelte-material-ui/bare.css'
-  import Router from 'svelte-spa-router'
+  import Router, { location } from 'svelte-spa-router'
 
   const routes = {
     '/': Home,
@@ -25,11 +25,17 @@
   </Header>
   <Content>
     <List>
-      <Item href="#/">
+      <Item
+        activated={$location === '/'}
+        href="#/"
+      >
         <Graphic class="material-icons" aria-hidden="true">home</Graphic>
         <Text>Home</Text>
       </Item>
-      <Item href="#/help">
+      <Item
+        activated={$location === '/help'}
+        href="#/help"
+      >
         <Graphic class="material-icons" aria-hidden="true">help</Graphic>
         <Text>Help</Text>
       </Item>
