@@ -7,7 +7,7 @@ function persistentStore (k, v) {
 }
 
 export const activeCamp = persistentStore('activeCamp', 0)
-export const campingTime = persistentStore('finishTimeUnit', 25 * 60 * 1000 /* minutes */)
+export const campingTime = persistentStore('campingTime', 25 * 60 * 1000 /* minutes */)
 export const finishTime = persistentStore('finishTime', 0)
 export const pluscodes = persistentStore('pluscodes', [
   '8FW4V75V+8Q', // エッフェル塔
