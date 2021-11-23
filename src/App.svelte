@@ -40,7 +40,7 @@
   </Row>
 </TopAppBar>
 <div class="drawer-cover" class:hidden={!open} on:click={() => open = false}></div>
-<AutoAdjust style="display: flex; flex-direction: column; min-height: 100vh;" {topAppBar}>
+<AutoAdjust style="display: flex; flex-direction: column; min-height: calc(100vh - 64px /* computed */);" {topAppBar}>
   <Router {routes}></Router>
 </AutoAdjust>
 
