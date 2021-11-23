@@ -5,7 +5,7 @@
   import Home from './routes/Home.svelte'
   import Drawer, { Content, Title as DrawerTitle, Header } from '@smui/drawer'
   import IconButton from '@smui/icon-button'
-  import List, { Graphic, Item, Text } from '@smui/list'
+  import List, { Graphic, Item, Separator, Text } from '@smui/list'
   import TopAppBar, { AutoAdjust, Row, Section, Title } from '@smui/top-app-bar'
   import 'svelte-material-ui/bare.css'
   import Router, { location } from 'svelte-spa-router'
@@ -45,6 +45,7 @@
         <Graphic class="material-icons" aria-hidden="true">home</Graphic>
         <Text>Home</Text>
       </Item>
+      <Separator></Separator>
       <Item
         activated={$location === '/help'}
         href="#/help"
