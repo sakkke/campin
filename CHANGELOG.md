@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Make top-app-bar fixed
 - Fix `min-height` in `<main>`
+- Fix issue that is not centered correctly
 
 ## [0.2.0] - 2021-11-22
 ### Added

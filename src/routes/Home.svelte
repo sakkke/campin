@@ -5,7 +5,7 @@
   import LayoutGrid, { Cell } from '@smui/layout-grid'
 </script>
 
-<YCenter style="height: 100%;">
+<YCenter style="flex-grow: 1;">
   <LayoutGrid style="background-color: rgba(255, 255, 255, 20%); border-radius: 20px; margin: 20px; width: 100%;">
     {#each [...$pluscodes].reverse() as pluscode, index}
       <Cell span={6}>
