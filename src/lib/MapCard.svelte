@@ -29,7 +29,7 @@
       if (!(progress > 1)) {
         progress = 1 - ($finishTime - Date.now()) / $campingTime
       } else {
-        if (!$pluscodes.includes(value)) $pluscodes.push(value)
+        if (!$pluscodes.includes(value)) $pluscodes = [...$pluscodes, value]
         stopCamp()
       }
     }
