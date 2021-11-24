@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Add `short_name` field in `manifest.webmanifest`
+- Add `meta[name="theme-color"]` in `index.html`
 
 ## [0.4.0] - 2021-11-24
 ### Added
