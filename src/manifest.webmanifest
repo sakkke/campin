@@ -1,0 +1,54 @@
+{
+  "name": "Campin",
+  "icons": [
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "./assets/campin.svg"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "1024x1024",
+      "src": "./assets/maskable_icon.png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "./assets/maskable_icon_x512.png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "384x384",
+      "src": "./assets/maskable_icon_x384.png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "192x192",
+      "src": "./assets/maskable_icon_x192.png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "128x128",
+      "src": "./assets/maskable_icon_x128.png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "96x96",
+      "src": "./assets/maskable_icon_x96.png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "72x72",
+      "src": "./assets/maskable_icon_x72.png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "48x48",
+      "src": "./assets/maskable_icon_x48.png"
+    }
+  ],
+  "display": "fullscreen",
+  "background_color": "#fff",
+  "start_url": "/",
+  "theme_color": "#3f51b5"
+}
