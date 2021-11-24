@@ -22,7 +22,6 @@
   "devDependencies": {
     "@parcel/packager-raw-url": "^2.0.1",
     "@parcel/transformer-webmanifest": "^2.0.1",
-    "@smui/top-app-bar": "^6.0.0-beta.2",
     "parcel": "^2.0.1",
     "parcel-transformer-svelte": "^1.2.3"
   },
@@ -38,6 +37,7 @@
     "@smui/list": "^6.0.0-beta.2",
     "@smui/textfield": "^6.0.0-beta.2",
     "@smui/tooltip": "^6.0.0-beta.2",
+    "@smui/top-app-bar": "^6.0.0-beta.2",
     "leaflet": "^1.7.1",
     "localforage": "^1.10.0",
     "pluscodes": "github:sakkke/pluscodes#latest",
