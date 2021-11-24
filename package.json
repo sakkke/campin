@@ -20,6 +20,8 @@
   "homepage": "https://github.com/sakkke/campin#readme",
   "private": true,
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.0.1",
+    "@parcel/transformer-webmanifest": "^2.0.1",
     "@smui/top-app-bar": "^6.0.0-beta.2",
     "parcel": "^2.0.1",
     "parcel-transformer-svelte": "^1.2.3"
