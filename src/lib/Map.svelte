@@ -14,11 +14,11 @@
   export let height = '360px'
   export let lat = 35.710113 // latitude
   export let lon = 139.810703 // longitude
+  export let map
   export let marked = false
+  export let marker
   export let width = 'auto'
   export let zoom = 18
-
-  let map
 
   $: {
     lat, lon
@@ -39,7 +39,7 @@
       .addTo(map)
 
     if (marked) {
-      L
+      marker = L
         .marker([lat, lon])
         .addTo(map)
     }

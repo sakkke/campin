@@ -9,8 +9,12 @@
   import TextField from '@smui/textfield'
   import Icon from '@smui/textfield/icon'
   import Tooltip, { Wrapper } from '@smui/tooltip'
-  import { decode } from 'pluscodes'
+  import { decode, encode } from 'pluscodes'
+  import { onMount } from 'svelte'
 
+  let map
+  let marked = true
+  let marker
   let progress = 0
   let value = '8Q7XMPQG+3C'
   $: camping = !!$activeCamp || !!$finishTime
@@ -42,6 +46,22 @@
   
   export let index = 0
   export { value as pluscode }
+
+  onMount(() => {
+    map.on('click', e => {
+      lat = e.latlng.lat
+      lon = e.latlng.lng
+      map.removeLayer(marker)
+      value = encode({ latitude: lat, longitude: lon })
+      map.setView(new L.LatLng(lat, lon))
+
+      if (marked) {
+        marker = L
+          .marker([lat, lon])
+          .addTo(map)
+      }
+    })
+  })
 </script>
 
 <Card style="overflow: hidden;">
@@ -67,7 +87,7 @@
   {:else}
     <Media class="card-media-16x9" aspectRatio="16x9">
       <MediaContent>
-        <Map height="100%" {lat} {lon} marked></Map>
+        <Map bind:map bind:marked bind:marker height="100%" {lat} {lon}></Map>
       </MediaContent>
     </Media>
     <Content style="height: 56px /* computed */;">
